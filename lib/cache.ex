@@ -212,6 +212,5 @@ defmodule RabbitMQ.MessageDeduplicationPlugin.Cache do
   # Cache is replicated on two-third of the cluster nodes.
   defp cache_replicas() do
     nodes = [Node.self() | Node.list()]
-    nodes |> Enum.split(length(nodes)) |> elem(0)
   end
 end
